@@ -14,6 +14,7 @@
     "@supabase/supabase-js": "^2.78.0",
     "clsx": "^2.1.1",
     "date-fns": "^4.1.0",
+    "motion": "^12.23.24",
     "next": "15.3.3",
     "next-auth": "^5.0.0-beta.30",
     "react": "^19.0.0",

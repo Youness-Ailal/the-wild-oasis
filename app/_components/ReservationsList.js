@@ -2,6 +2,7 @@
 
 import { useOptimistic } from "react";
 import ReservationCard from "./ReservationCard";
+import { Reorder } from "motion/react";
 
 function ReservationsList({ bookings }) {
   const [optimisticBookings, removeOptimisticBooking] = useOptimistic(
@@ -19,7 +20,10 @@ function ReservationsList({ bookings }) {
           </a>
         </p>
       ) : (
-        <ul className="space-y-6">
+        <Reorder.Group
+          values={optimisticBookings}
+          as="ul"
+          className="space-y-6">
           {optimisticBookings.map((booking) => (
             <ReservationCard
               removeOptimisticBooking={removeOptimisticBooking}
@@ -27,7 +31,7 @@ function ReservationsList({ bookings }) {
               key={booking.id}
             />
           ))}
-        </ul>
+        </Reorder.Group>
       )}
     </>
   );
